@@ -1,26 +1,30 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>House First, Then the Business</title>
-<meta name="description" content="A Netherlands roadmap in four steps: save, buy a first home before 35, save again, then decide about the business.">
+<meta name="description" content="A plan in four steps: save, buy a first house before 35, save again, then decide about the cafe.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0e1011">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">
 <style>
 :root{
   --bg:#0e1011;
   --line:#272c2f;
   --line-soft:#1e2325;
   --rule:#3c4348;
-  --text:#e4e2db;
-  --muted:#a5a29a;
-  --dim:#7a7770;
-  --accent:#c9a86e;
-  --accent-deep:#584a2c;
-  --rust:#b8825f;
-  --serif:ui-serif,"New York","Iowan Old Style","Palatino Linotype",Palatino,Georgia,Cambria,"Times New Roman",serif;
-  --ui:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --text:#e5e3dc;
+  --muted:#a6a39b;
+  --dim:#7b7871;
+  --accent:#cfae72;
+  --accent-deep:#5c4d2e;
+  --rust:#bd8862;
+  --serif:"Source Serif 4",ui-serif,"New York","Iowan Old Style",Palatino,Georgia,serif;
+  --ui:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -28,12 +32,18 @@ body{
   margin:0;
   background:var(--bg);
   color:var(--text);
-  font:400 17px/1.72 var(--serif);
+  font-family:var(--serif);
+  font-size:17.5px;
+  line-height:1.7;
+  font-weight:400;
+  font-optical-sizing:auto;
+  font-variant-numeric:lining-nums;
   overflow-x:hidden;
-  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
 }
 .wrap{
-  max-width:820px;margin:0 auto;
+  max-width:790px;margin:0 auto;
   padding-left:max(20px,env(safe-area-inset-left));
   padding-right:max(20px,env(safe-area-inset-right));
 }
@@ -47,19 +57,19 @@ body{
 .skip:focus{left:0}
 
 /* ---------- header ---------- */
-header.page{border-bottom:1px solid var(--rule);padding:46px 0 32px}
+header.page{border-bottom:1px solid var(--rule);padding:48px 0 34px}
 .kicker{
   font:600 .7rem/1 var(--ui);letter-spacing:.18em;text-transform:uppercase;
-  color:var(--accent);margin:0 0 16px;
+  color:var(--accent);margin:0 0 18px;
 }
 h1{
-  margin:0 0 14px;font-family:var(--serif);
-  font-size:2rem;line-height:1.18;font-weight:600;letter-spacing:-.012em;
+  margin:0 0 16px;font-family:var(--serif);
+  font-size:2.15rem;line-height:1.16;font-weight:600;letter-spacing:-.015em;
 }
-.abstract{margin:0 0 20px;font-size:1.08rem;line-height:1.62;color:var(--text);max-width:56ch}
+.abstract{margin:0 0 22px;font-size:1.1rem;line-height:1.6;color:var(--text);max-width:54ch}
 .window{
-  margin:0;font:400 .85rem/1.6 var(--ui);color:var(--muted);
-  display:flex;flex-wrap:wrap;gap:4px 22px;
+  margin:0;font:400 .85rem/1.7 var(--ui);color:var(--muted);
+  display:flex;flex-wrap:wrap;gap:2px 24px;
 }
 .window b{color:var(--accent);font-weight:600}
 
@@ -81,7 +91,7 @@ nav.top ul::-webkit-scrollbar{display:none}
 nav.top a{
   display:block;white-space:nowrap;
   padding:13px 15px 12px;
-  font:500 .78rem/1 var(--ui);letter-spacing:.05em;
+  font:500 .8rem/1 var(--ui);letter-spacing:.01em;
   color:var(--muted);text-decoration:none;
   border-bottom:2px solid transparent;
 }
@@ -90,114 +100,111 @@ nav.top a:hover,nav.top a:focus{color:var(--accent);border-bottom-color:var(--ac
 
 /* ---------- sections ---------- */
 main{padding:0 0 64px}
-section{padding:44px 0 10px;border-bottom:1px solid var(--line-soft)}
+section{padding:46px 0 10px;border-bottom:1px solid var(--line-soft)}
 section:last-of-type{border-bottom:none}
 h2{
-  margin:0 0 8px;font-family:var(--serif);
-  font-size:1.42rem;font-weight:600;letter-spacing:-.008em;line-height:1.3;
+  margin:0 0 10px;font-family:var(--serif);
+  font-size:1.5rem;font-weight:600;letter-spacing:-.012em;line-height:1.28;
 }
 h2 .num{
   display:block;
   font:700 .68rem/1 var(--ui);letter-spacing:.18em;
-  color:var(--accent);margin-bottom:9px;
+  color:var(--accent);margin-bottom:10px;
 }
-h3{margin:32px 0 8px;font-family:var(--serif);font-size:1.12rem;font-weight:600;color:var(--text)}
+h3{margin:34px 0 8px;font-family:var(--serif);font-size:1.16rem;font-weight:600;letter-spacing:-.008em}
 h4{
-  margin:22px 0 6px;font:600 .72rem/1.4 var(--ui);
+  margin:24px 0 6px;font:600 .72rem/1.4 var(--ui);
   letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
 }
-p{margin:12px 0;max-width:66ch}
-.lede{color:var(--muted);margin:6px 0 20px;max-width:62ch;font-size:1.02rem}
-ul,ol{margin:12px 0;padding-left:22px;max-width:66ch}
-li{margin:8px 0}
+p{margin:13px 0;max-width:64ch}
+.lede{color:var(--muted);margin:6px 0 22px;max-width:60ch;font-size:1.04rem}
+ul,ol{margin:13px 0;padding-left:22px;max-width:64ch}
+li{margin:9px 0}
 a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
-a:hover{color:#e0c48f}
+a:hover{color:#e6c692}
 strong{font-weight:600}
-em,i{font-style:italic}
 
 /* ---------- references ---------- */
-.r{font-size:.66em;vertical-align:.42em;white-space:nowrap;margin-left:2px;font-family:var(--ui)}
-.r a{color:var(--accent);text-decoration:none;font-weight:700;letter-spacing:.03em}
+.r{font-size:.64em;vertical-align:.44em;white-space:nowrap;margin-left:2px;font-family:var(--ui)}
+.r a{color:var(--accent);text-decoration:none;font-weight:600;letter-spacing:.02em}
 .r a:hover{text-decoration:underline}
 .calc{
-  font:700 .58rem/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;
-  color:var(--rust);border:1px solid #4a382b;border-radius:2px;
+  font:600 .58rem/1 var(--ui);letter-spacing:.1em;text-transform:uppercase;
+  color:var(--rust);border:1px solid #4d3a2c;border-radius:2px;
   padding:2px 5px;margin-left:6px;vertical-align:.15em;white-space:nowrap;
 }
 
-/* ---------- tables (booktabs) ---------- */
-figure.tbl{margin:24px 0}
+/* ---------- tables ---------- */
+figure.tbl{margin:26px 0}
 figure.tbl figcaption{
-  font:400 .8rem/1.5 var(--ui);color:var(--muted);
-  padding-bottom:10px;
+  font:400 .81rem/1.5 var(--ui);color:var(--muted);padding-bottom:11px;
 }
 figure.tbl figcaption b{
-  color:var(--accent);font-weight:700;letter-spacing:.08em;
-  text-transform:uppercase;font-size:.72rem;margin-right:7px;
+  color:var(--accent);font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;font-size:.7rem;margin-right:8px;
 }
 table{
-  width:100%;border-collapse:collapse;font-size:.95rem;
+  width:100%;border-collapse:collapse;font-size:.96rem;
   border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
 }
 thead th{
   text-align:left;vertical-align:bottom;
   font:600 .68rem/1.4 var(--ui);letter-spacing:.12em;text-transform:uppercase;
-  color:var(--muted);padding:11px 14px 9px 0;
+  color:var(--muted);padding:12px 16px 10px 0;
   border-bottom:1px solid var(--rule);
 }
 tbody td{
-  text-align:left;vertical-align:top;padding:11px 14px 11px 0;
-  border-bottom:1px solid var(--line-soft);overflow-wrap:anywhere;
+  text-align:left;vertical-align:top;padding:12px 16px 12px 0;
+  border-bottom:1px solid var(--line-soft);overflow-wrap:anywhere;line-height:1.6;
 }
 tbody tr:last-child td{border-bottom:none}
 th:last-child,td:last-child{padding-right:0}
 td b{font-weight:600}
-.num-col{font-variant-numeric:tabular-nums}
+.num-col{font-variant-numeric:tabular-nums lining-nums}
 
 /* ---------- notes ---------- */
 aside.note{
-  margin:26px 0;padding:2px 0 2px 20px;
+  margin:28px 0;padding:2px 0 2px 22px;
   border-left:2px solid var(--accent-deep);
 }
-aside.note.caution{border-left-color:#4a382b}
+aside.note.caution{border-left-color:#4d3a2c}
 aside.note .lbl{
-  margin:0 0 7px;font:700 .66rem/1 var(--ui);
+  margin:0 0 8px;font:600 .66rem/1 var(--ui);
   letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
 }
 aside.note.caution .lbl{color:var(--rust)}
 aside.note h4{
-  margin:0 0 7px;font-family:var(--serif);font-size:1.04rem;font-weight:600;
-  letter-spacing:0;text-transform:none;color:var(--text);
+  margin:0 0 8px;font-family:var(--serif);font-size:1.08rem;font-weight:600;
+  letter-spacing:-.008em;text-transform:none;color:var(--text);
 }
-aside.note p{max-width:64ch}
+aside.note p{max-width:62ch}
 aside.note p:last-child,aside.note ul:last-child{margin-bottom:0}
-aside.note ul{margin-bottom:0}
 
 /* ---------- steps ---------- */
-.step{margin:30px 0;padding-top:24px;border-top:1px solid var(--rule)}
-.step:first-of-type{margin-top:24px}
-.step > .head{margin-bottom:16px}
+.step{margin:32px 0;padding-top:26px;border-top:1px solid var(--rule)}
+.step:first-of-type{margin-top:26px}
+.step > .head{margin-bottom:18px}
 .step .head .k{
-  font:700 .68rem/1 var(--ui);letter-spacing:.18em;
+  font:600 .68rem/1 var(--ui);letter-spacing:.18em;
   text-transform:uppercase;color:var(--accent);
 }
-.step .head h3{margin:9px 0 4px;font-size:1.24rem}
-.step .head .when{font:400 .84rem/1.5 var(--ui);color:var(--muted)}
+.step .head h3{margin:10px 0 5px;font-size:1.32rem;letter-spacing:-.012em}
+.step .head .when{font:400 .85rem/1.5 var(--ui);color:var(--muted)}
 
 /* ---------- action blocks ---------- */
-.do{margin:26px 0 0;padding:16px 0 0;border-top:1px solid var(--line)}
+.do{margin:28px 0 0;padding:18px 0 0;border-top:1px solid var(--line)}
 .do > h4{margin:0 0 4px;color:var(--accent)}
 
 /* ---------- checkboxes ---------- */
 .todo{list-style:none;padding-left:0;margin:4px 0;max-width:none}
 .todo li{
-  display:flex;gap:13px;align-items:flex-start;
-  padding:11px 0;border-bottom:1px solid var(--line-soft);margin:0;
+  display:flex;gap:14px;align-items:flex-start;
+  padding:12px 0;border-bottom:1px solid var(--line-soft);margin:0;
 }
 .todo li:last-child{border-bottom:none}
 .todo input[type=checkbox]{
   appearance:none;-webkit-appearance:none;
-  flex:0 0 auto;width:21px;height:21px;margin:2px 0 0;
+  flex:0 0 auto;width:21px;height:21px;margin:3px 0 0;
   border:1px solid var(--dim);border-radius:3px;background:transparent;cursor:pointer;
 }
 .todo input[type=checkbox]:checked{background:var(--accent);border-color:var(--accent)}
@@ -207,65 +214,63 @@ aside.note ul{margin-bottom:0}
 }
 .todo input[type=checkbox]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .todo label{
-  cursor:pointer;font-size:.97rem;line-height:1.62;
+  cursor:pointer;font-size:.99rem;line-height:1.62;
   min-height:24px;min-width:0;overflow-wrap:anywhere;
 }
 
 /* ---------- glossary ---------- */
-dl.gloss{margin:18px 0}
-dl.gloss div{padding:14px 0;border-bottom:1px solid var(--line-soft)}
+dl.gloss{margin:20px 0}
+dl.gloss div{padding:15px 0;border-bottom:1px solid var(--line-soft)}
 dl.gloss div:last-child{border-bottom:none}
 dl.gloss dt{font-weight:600;color:var(--text);margin-bottom:4px}
 dl.gloss dt .nl{color:var(--accent);font-style:italic;font-weight:600}
-dl.gloss dd{margin:0;color:var(--muted);font-size:.95rem;max-width:64ch}
+dl.gloss dd{margin:0;color:var(--muted);font-size:.96rem;max-width:62ch}
 
-/* ---------- bibliography ---------- */
-ol.src{margin:18px 0;padding-left:0;list-style:none;counter-reset:s;max-width:none}
+/* ---------- sources ---------- */
+ol.src{margin:20px 0;padding-left:0;list-style:none;counter-reset:s;max-width:none}
 ol.src li{
   counter-increment:s;position:relative;
-  padding:13px 0 13px 36px;border-bottom:1px solid var(--line-soft);
-  font-size:.94rem;overflow-wrap:anywhere;
+  padding:14px 0 14px 36px;border-bottom:1px solid var(--line-soft);
+  font-size:.95rem;overflow-wrap:anywhere;
 }
 ol.src li:last-child{border-bottom:none}
 ol.src li::before{
-  content:counter(s) ".";position:absolute;left:0;top:13px;
-  color:var(--accent);font-weight:600;font-size:.9rem;
+  content:counter(s) ".";position:absolute;left:0;top:14px;
+  color:var(--accent);font-weight:600;font-size:.92rem;
   font-variant-numeric:tabular-nums;
 }
-ol.src .what{color:var(--muted);display:block;font-size:.88rem;line-height:1.55;margin-top:2px}
+ol.src .what{color:var(--muted);display:block;font-size:.89rem;line-height:1.55;margin-top:3px}
 
-.colophon{color:var(--muted);font-size:.9rem;margin-top:24px;max-width:64ch}
+.colophon{color:var(--muted);font-size:.92rem;margin-top:26px;max-width:62ch}
 
 footer.page{
-  border-top:1px solid var(--rule);padding:26px 0 48px;
-  color:var(--dim);font:400 .86rem/1.6 var(--ui);
+  border-top:1px solid var(--rule);padding:28px 0 52px;
+  color:var(--dim);font:400 .87rem/1.65 var(--ui);
 }
-footer.page p{max-width:64ch;margin:0}
+footer.page p{max-width:62ch;margin:0}
 
 /* ---------- responsive ---------- */
 @media (max-width:700px){
-  body{font-size:16.5px}
-  h1{font-size:1.6rem}
-  h2{font-size:1.26rem}
-  .step .head h3{font-size:1.14rem}
+  body{font-size:17px}
+  h1{font-size:1.68rem}
+  h2{font-size:1.3rem}
+  .abstract{font-size:1.05rem}
+  .step .head h3{font-size:1.18rem}
   table.stack{border-top:none;border-bottom:none}
   table.stack thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-  table.stack tr{
-    display:block;border-top:1px solid var(--rule);
-    padding:6px 0 10px;
-  }
+  table.stack tr{display:block;border-top:1px solid var(--rule);padding:7px 0 11px}
   table.stack tr:last-child{border-bottom:1px solid var(--rule)}
   table.stack td{display:block;border-bottom:none;padding:7px 0}
   table.stack td::before{
     content:attr(data-label);display:block;
     font:600 .64rem/1.4 var(--ui);letter-spacing:.12em;text-transform:uppercase;
-    color:var(--dim);margin-bottom:3px;
+    color:var(--dim);margin-bottom:4px;
   }
 }
 
 @media (min-width:900px){
-  body{font-size:17.5px}
-  h1{font-size:2.2rem}
+  body{font-size:18px}
+  h1{font-size:2.35rem}
 }
 
 /* ---------- print ---------- */
@@ -295,11 +300,11 @@ footer.page p{max-width:64ch;margin:0}
   <div class="wrap">
     <p class="kicker">Netherlands &middot; Personal plan</p>
     <h1>House First, Then the Business</h1>
-    <p class="abstract">Save for a house, buy it before 35, save again, then decide about the cafe. Four steps in that order — and only the first two have to be settled now.</p>
+    <p class="abstract">Save for a house. Buy it before you turn 35. Then save again for the cafe. Four steps, in that order — and only the first two need answers now.</p>
     <p class="window">
-      <span>Renting at present</span>
-      <span>Target purchase <b>May 2028</b></span>
-      <span>Latest possible <b>age 35</b></span>
+      <span>Renting now</span>
+      <span>Aiming for <b>May 2028</b></span>
+      <span>Latest possible: <b>age 35</b></span>
     </p>
   </div>
 </header>
@@ -307,12 +312,12 @@ footer.page p{max-width:64ch;margin:0}
 <nav class="top" aria-label="Sections">
   <div class="wrap">
     <ul>
-      <li><a href="#how">Preface</a></li>
-      <li><a href="#position">Position</a></li>
-      <li><a href="#steps">The four steps</a></li>
+      <li><a href="#how">How to read</a></li>
+      <li><a href="#position">Where you are</a></li>
+      <li><a href="#steps">Four steps</a></li>
       <li><a href="#money">Money</a></li>
-      <li><a href="#terms">Terms</a></li>
-      <li><a href="#change">Contingencies</a></li>
+      <li><a href="#terms">Words</a></li>
+      <li><a href="#change">If things change</a></li>
       <li><a href="#sources">Sources</a></li>
     </ul>
   </div>
@@ -323,108 +328,109 @@ footer.page p{max-width:64ch;margin:0}
 
 <!-- ============ I ============ -->
 <section id="how">
-  <h2><span class="num">I</span> Preface</h2>
-  <p class="lede">Nothing here is urgent. The value is in the order of the steps, and in knowing exactly where the one fixed date sits.</p>
+  <h2><span class="num">I</span> How to read this</h2>
+  <p class="lede">Nothing here is urgent. What matters is the order of the steps, and knowing where the one fixed date sits.</p>
 
-  <p>Each step carries its own short list of actions, so that what to do sits beside the reasoning for doing it. Ticks are remembered in this browser alone, so the authoritative list should live somewhere you trust.</p>
+  <p>Each step has its own short list of things to do. The tasks sit next to the reasons for them, so you do not have to jump around. Ticks are saved in this browser only, so keep the real list somewhere safe.</p>
 
-  <p>Figures in the text carry a superscript pointing to the source that supports them<span class="r"><a href="#sources">↓</a></span>, official or primary wherever one exists. Where a figure is arithmetic performed here rather than quoted, it is marked <span class="calc">calc</span>.</p>
+  <p>Small numbers in the text link to the source for that fact<span class="r"><a href="#sources">↓</a></span>. Almost all of them are official. Where I worked something out myself instead of copying it, it is marked <span class="calc">calc</span>.</p>
 
-  <p>Prices, interest rates and market averages are deliberately absent. They move every quarter, and including them would make this document wrong within months. What remains are the rules that determine outcomes: how much a salary will support, which costs cannot be financed, and which entitlements expire at 35.</p>
+  <p>I left out prices, interest rates and market averages on purpose. They change every few months, and they would make this page wrong. What stays are the rules that decide things: how much your salary can borrow, which costs you cannot borrow, and what you lose when you turn 35.</p>
 </section>
 
 <!-- ============ II ============ -->
 <section id="position">
-  <h2><span class="num">II</span> The position</h2>
-  <p class="lede">Where things stand at the outset, and what that supports.</p>
+  <h2><span class="num">II</span> Where you are</h2>
+  <p class="lede">The starting point, and what it is enough for.</p>
 
   <figure class="tbl">
-    <figcaption><b>Table 1</b> The starting position.</figcaption>
+    <figcaption><b>Table 1</b> Where you stand today.</figcaption>
     <table class="stack">
       <thead>
-        <tr><th scope="col">Item</th><th scope="col">Position</th></tr>
+        <tr><th scope="col">Item</th><th scope="col">Where it stands</th></tr>
       </thead>
       <tbody>
         <tr>
           <td data-label="Item"><b>Housing</b></td>
-          <td data-label="Position">Renting. Flexible, no maintenance obligations, no exposure to price movements — a reasonable position from which to save.</td>
+          <td data-label="Where it stands">Renting. No maintenance, no risk from house prices. A good place to save from.</td>
         </tr>
         <tr>
-          <td data-label="Item"><b>Target purchase</b></td>
-          <td data-label="Position">May 2028.</td>
+          <td data-label="Item"><b>Aiming for</b></td>
+          <td data-label="Where it stands">May 2028.</td>
         </tr>
         <tr>
           <td data-label="Item"><b>Latest possible</b></td>
-          <td data-label="Position">The 35th birthday, roughly three years beyond the target.</td>
+          <td data-label="Where it stands">Your 35th birthday, about three years after that.</td>
         </tr>
         <tr>
-          <td data-label="Item"><b>Employment</b></td>
-          <td data-label="Position">Permanent contract expected by then. This is the largest single factor in a lending decision.<span class="r"><a href="#s6">6</a></span></td>
+          <td data-label="Item"><b>Job</b></td>
+          <td data-label="Where it stands">Permanent contract expected by then. Nothing matters more to a bank.<span class="r"><a href="#s6">6</a></span></td>
         </tr>
         <tr>
-          <td data-label="Item"><b>Expected salary</b></td>
-          <td data-label="Position">Approximately <b>€80,000</b> gross.</td>
+          <td data-label="Item"><b>Salary</b></td>
+          <td data-label="Where it stands">About <b>€80,000</b> gross.</td>
         </tr>
         <tr>
-          <td data-label="Item"><b>Indicative borrowing</b></td>
-          <td data-label="Position" class="num-col"><b>€320,000–€360,000</b>, on the conventional 4–4.5× multiple of gross income.<span class="calc">calc</span><span class="r"><a href="#s6">6</a></span></td>
+          <td data-label="Item"><b>What you can borrow</b></td>
+          <td data-label="Where it stands" class="num-col">Roughly <b>€320,000–€360,000</b>. Banks usually lend 4 to 4.5 times your gross salary.<span class="calc">calc</span><span class="r"><a href="#s6">6</a></span></td>
         </tr>
         <tr>
-          <td data-label="Item"><b>Cash required</b></td>
-          <td data-label="Position" class="num-col"><b>€6,000–€10,000</b>, none of which can be borrowed.<span class="r"><a href="#s4">4</a></span></td>
+          <td data-label="Item"><b>Cash you need</b></td>
+          <td data-label="Where it stands" class="num-col"><b>€6,000–€10,000</b>. You cannot borrow this part.<span class="r"><a href="#s4">4</a></span></td>
         </tr>
         <tr>
           <td data-label="Item"><b>The first house</b></td>
-          <td data-label="Position">A stepping stone rather than a final home, and it does not need to be more than that.</td>
+          <td data-label="Where it stands">A step on the way, not your final home. It does not need to be.</td>
         </tr>
       </tbody>
     </table>
   </figure>
 
   <aside class="note">
-    <p class="lbl">Observation</p>
-    <h4>Income is not the binding constraint</h4>
-    <p>At approximately €80,000, the conventional multiple supports a first purchase comfortably. What constrains the plan is smaller and more tractable: several thousand euros of cash that no lender will advance, and a permanent contract. Both are within reach in the time available.</p>
-    <p>The multiple is a rule of thumb rather than a rule. The actual maximum comes from tables revised each year and moves with the interest rate and with any existing debts, which is why the figure worth acting on is the one an adviser puts in writing.<span class="r"><a href="#s6">6</a></span></p>
+    <p class="lbl">Good news</p>
+    <h4>Your salary is not the problem</h4>
+    <p>At about €80,000 you can borrow enough for a first house. So what you earn is not what holds you back.</p>
+    <p>What holds you back is much smaller and easier to fix: a few thousand euros in cash that no bank will lend you, and a permanent contract. You have time for both.</p>
+    <p>One warning about the 4 to 4.5 rule: it is only a rough guide. The real number comes from tables that change every year, and it moves with interest rates and with any debts you have. So the number to trust is the one an adviser writes down for you.<span class="r"><a href="#s6">6</a></span></p>
   </aside>
 
   <aside class="note">
-    <p class="lbl">Observation</p>
-    <h4>The margin created by May 2028</h4>
-    <p>A May 2028 target sits roughly three years ahead of the age-35 threshold, and that margin changes the character of the deadline. It functions as a fallback rather than a constraint.</p>
-    <p>A contract that converts late, a decision to save for longer, or a purchase that collapses shortly before completion would each cost time without ending the plan. The date can move more than once and still leave the entitlement intact.</p>
+    <p class="lbl">Good news</p>
+    <h4>Why May 2028 is a good date to aim for</h4>
+    <p>May 2028 is about three years before you turn 35. That gap is the best thing in this plan.</p>
+    <p>It turns the age limit into a backup instead of a threat. If your contract comes late, if you want to save longer, or if a sale falls apart at the last minute, you lose time but not the plan. The date can move more than once and you still keep the tax break.</p>
   </aside>
 </section>
 
 <!-- ============ III ============ -->
 <section id="steps">
   <h2><span class="num">III</span> The four steps</h2>
-  <p class="lede">Sequential, and each one funds the next.</p>
+  <p class="lede">One after the other. Each step pays for the next.</p>
 
   <!-- STEP 1 -->
   <article class="step">
     <div class="head">
       <div class="k">Step one</div>
       <h3>Save for the house</h3>
-      <div class="when">Now to May 2028 &middot; approximately 21 months</div>
+      <div class="when">Now until May 2028 &middot; about 21 months</div>
     </div>
 
-    <p>A house bought to live in can be financed to <strong>100% of its assessed value</strong>. The mortgage covers the purchase price in full. What it does not cover are the costs that sit on top — notary, valuation, mortgage advice — and these must be met from your own funds.<span class="r"><a href="#s4">4</a></span></p>
+    <p>If you buy a house to live in, the bank can lend you the full price. All of it. What the bank will not pay are the extra costs on top: the notary, the valuation, and the mortgage advice. That part has to be your own money.<span class="r"><a href="#s4">4</a></span></p>
 
-    <p>Step one therefore reduces to a comparatively modest sum: <strong>€6,000 to €10,000</strong>. Spread across 21 months, reaching €10,000 requires roughly <strong>€480 a month</strong>; reaching €15,000, which would also cover a buying agent and leave a margin, requires about <strong>€715</strong>.<span class="calc">calc</span></p>
+    <p>So step one is really about one fairly small amount: <strong>€6,000 to €10,000</strong>. Over 21 months, reaching €10,000 means saving about <strong>€480 a month</strong>. If you want €15,000, so you can also pay a buying agent and keep something spare, that is about <strong>€715 a month</strong>.<span class="calc">calc</span></p>
 
-    <p>The other half of this step costs nothing at all: settling the employment contract. Lenders assess a permanent contract quite differently from a temporary one, and where conversion has not yet happened, an <i>intentieverklaring</i> — a written statement from the employer of their intention to make the position permanent — is generally accepted in its place.<span class="r"><a href="#s6">6</a></span></p>
+    <p>The other half of step one is free: sort out your contract. Banks treat a permanent contract very differently from a temporary one. If yours has not changed yet, ask for an <i>intentieverklaring</i> — a letter from your employer saying they plan to make it permanent. Banks accept that instead.<span class="r"><a href="#s6">6</a></span></p>
 
-    <p>Two further matters affect borrowing capacity. Student debt is assessed on the <em>current</em> monthly repayment rather than the original balance.<span class="r"><a href="#s6">6</a></span> And no Dutch property should be acquired in any form before this one, since the first-time-buyer exemption may be claimed only once and any earlier use exhausts it. Property held abroad is irrelevant to this: the test is whether the exemption has been claimed before, not whether a home has ever been owned.<span class="r"><a href="#s2">2</a>,<a href="#s3">3</a></span></p>
+    <p>Two other things change how much you can borrow. Student debt counts against you, but only the amount you pay each month now, not the original loan.<span class="r"><a href="#s6">6</a></span> And do not buy any Dutch property before this one. The starter tax break works only once, and any use spends it. A house you own in another country does not matter — the only question is whether you have used this Dutch break before.<span class="r"><a href="#s2">2</a>,<a href="#s3">3</a></span></p>
 
     <div class="do">
-      <h4>Actions</h4>
+      <h4>To do</h4>
       <ul class="todo">
-        <li><input type="checkbox" id="k1"><label for="k1">Open a separate savings account and set a standing transfer — about €480 a month, or €715 for the fuller margin.<span class="calc">calc</span></label></li>
-        <li><input type="checkbox" id="k2"><label for="k2">Ask the employer, in writing, what conversion to a permanent contract requires, and whether an <i>intentieverklaring</i> can be issued in the meantime.</label></li>
-        <li><input type="checkbox" id="k3"><label for="k3">Obtain a maximum loan figure from a mortgage adviser in writing, rather than relying on the multiple.<span class="r"><a href="#s6">6</a></span></label></li>
-        <li><input type="checkbox" id="k4"><label for="k4">Confirm the first-time-buyer exemption has never been claimed in the Netherlands.<span class="r"><a href="#s2">2</a></span></label></li>
-        <li><input type="checkbox" id="k5"><label for="k5">Establish whether the municipalities under consideration offer a <i>Starterslening</i>, and whether budget remains.<span class="r"><a href="#s7">7</a></span></label></li>
+        <li><input type="checkbox" id="k1"><label for="k1">Open a separate savings account. Set up a monthly transfer of about €480, or €715 if you want more room.<span class="calc">calc</span></label></li>
+        <li><input type="checkbox" id="k2"><label for="k2">Ask your employer, in writing, what you need to do to get a permanent contract — and whether they will give you an <i>intentieverklaring</i> in the meantime.</label></li>
+        <li><input type="checkbox" id="k3"><label for="k3">Ask a mortgage adviser for your real maximum loan, in writing. Do not plan around the 4.5 rule.<span class="r"><a href="#s6">6</a></span></label></li>
+        <li><input type="checkbox" id="k4"><label for="k4">Check that you have never used the Dutch starter tax break.<span class="r"><a href="#s2">2</a></span></label></li>
+        <li><input type="checkbox" id="k5"><label for="k5">Check if the towns you like offer a <i>Starterslening</i>, and whether there is money left in the scheme.<span class="r"><a href="#s7">7</a></span></label></li>
       </ul>
     </div>
   </article>
@@ -433,38 +439,40 @@ footer.page p{max-width:64ch;margin:0}
   <article class="step">
     <div class="head">
       <div class="k">Step two</div>
-      <h3>Buy the first house, before 35</h3>
-      <div class="when">Target May 2028 &middot; final date: the 35th birthday</div>
+      <h3>Buy the first house, before you turn 35</h3>
+      <div class="when">Aiming for May 2028 &middot; last chance: your 35th birthday</div>
     </div>
 
-    <p>A purchase made under 35, to live in, by someone who has not claimed the exemption before attracts <strong>no transfer tax at all</strong> rather than 2%. A value ceiling applies, but it sits far above the relevant range. The exemption is claimed at the notary on the day of transfer, which means it is the <em>transfer</em> date that must precede the birthday, not the date the contract is signed.<span class="r"><a href="#s1">1</a>,<a href="#s2">2</a></span></p>
+    <p>If you are under 35, buying a house to live in, and you have never used the break before, you pay <strong>no transfer tax at all</strong> instead of 2%. There is a price limit, but it is far above what you will spend.<span class="r"><a href="#s1">1</a>,<a href="#s2">2</a></span></p>
 
-    <p>The loan will also fall well below the ceiling for <strong>NHG</strong>, the national mortgage guarantee. It costs a modest one-off premium and returns the lowest available interest rate together with genuine protection should the house have to be sold after job loss, illness or divorce.<span class="r"><a href="#s5">5</a></span></p>
+    <p>You claim it at the notary, on the day the house legally becomes yours. So it is <em>that</em> day which has to come before your birthday — not the day you sign the contract.<span class="r"><a href="#s2">2</a></span></p>
 
-    <h4>The stepping stone as a deliberate choice</h4>
-    <p>Treating the first house as temporary is worth stating plainly, because it changes the standard it has to meet. The question is not whether this is the house to keep. The question is whether it is worth owning during the years the exemption is still available.</p>
-    <p>Three consequences follow.</p>
+    <p>Your loan will also be small enough for <strong>NHG</strong>, the national mortgage guarantee. You pay a small one-off fee. In return you get the lowest interest rate, and cover if you ever have to sell after losing your job, getting ill, or a divorce.<span class="r"><a href="#s5">5</a></span></p>
+
+    <h4>Buying a house you will not keep</h4>
+    <p>It helps to say out loud that this house is temporary, because it changes what "good enough" means. You are not looking for the house you keep forever. You are looking for a house worth owning during the years while the tax break still exists.</p>
+    <p>Three things follow from that.</p>
     <ul>
-      <li><strong>Claiming the exemption now is the only way to claim it.</strong> It lapses at 35 regardless. Reserving it for a later, better house is not an option, because there is no later point at which it still exists. The second purchase will attract 2%, and that is simply the cost of moving up.<span class="r"><a href="#s1">1</a></span></li>
-      <li><strong>Selling on is unrestricted. Letting may not be.</strong> Many municipalities operate <i>opkoopbescherming</i>, which prohibits letting the property without a permit for four years after transfer. It imposes no obligation to live there and places no restriction on selling; what it prevents is becoming a landlord. The mortgage will carry its own occupancy clause in addition.<span class="r"><a href="#s8">8</a>,<a href="#s9">9</a></span></li>
-      <li><strong>Moving again incurs the buyer's costs again.</strong> Which argues for a house worth living in for several years, rather than the cheapest property that satisfies the deadline.</li>
+      <li><strong>Using the tax break now is the only way to use it.</strong> It ends at 35 either way. You cannot save it for a nicer house later, because later it is gone. Your second house will cost 2%, and that is simply the price of moving up.<span class="r"><a href="#s1">1</a></span></li>
+      <li><strong>You can sell whenever you want. Renting it out is what may be blocked.</strong> Many towns have <i>opkoopbescherming</i>: for four years after you buy, you cannot rent the house out without a permit. It does not force you to live there, and it does not stop you selling. Your mortgage will have its own rule about living in the house too.<span class="r"><a href="#s8">8</a>,<a href="#s9">9</a></span></li>
+      <li><strong>Moving again means paying the extra costs again.</strong> So pick a house you are happy in for a few years, not the cheapest one that beats the deadline.</li>
     </ul>
 
     <aside class="note caution">
-      <p class="lbl">Caution</p>
-      <h4>Any bid above the valuation is paid in cash</h4>
-      <p>The mortgage covers 100% of the assessed <em>value</em>, not 100% of the agreed price. Where a property is won by bidding above the valuation, the difference is paid from your own funds, in addition to the buyer's costs.<span class="r"><a href="#s4">4</a></span></p>
-      <p>This is the argument for saving beyond the strict minimum. A target set exactly at the minimum leaves no capacity to compete for any property that attracts a higher offer.</p>
+      <p class="lbl">Careful</p>
+      <h4>Anything you bid above the valuation, you pay in cash</h4>
+      <p>The bank lends 100% of what the house is <em>valued</em> at — not 100% of what you agreed to pay. If you win by offering more than the valuation, you pay that difference yourself, on top of the other costs.<span class="r"><a href="#s4">4</a></span></p>
+      <p>This is why you save more than the bare minimum. If you save exactly the minimum, you cannot compete for any house that someone else also wants.</p>
     </aside>
 
     <div class="do">
-      <h4>Actions</h4>
+      <h4>To do</h4>
       <ul class="todo">
-        <li><input type="checkbox" id="k6"><label for="k6">Set the notary <em>transfer</em> date with clear margin before the 35th birthday. The contract date does not determine eligibility.<span class="r"><a href="#s2">2</a></span></label></li>
-        <li><input type="checkbox" id="k7"><label for="k7">Sign the first-time-buyer declaration at the notary, and apply for NHG.<span class="r"><a href="#s2">2</a>,<a href="#s5">5</a></span></label></li>
-        <li><input type="checkbox" id="k8"><label for="k8">Include a financing condition in the purchase contract.</label></li>
-        <li><input type="checkbox" id="k9"><label for="k9">Retain cash against the difference between the valuation and the bid.</label></li>
-        <li><input type="checkbox" id="k10"><label for="k10">For an apartment, read the owners' association statutes, reserve fund and maintenance plan before bidding.</label></li>
+        <li><input type="checkbox" id="k6"><label for="k6">Make sure the notary date — the day the house becomes yours — is well before your 35th birthday. The contract date does not count.<span class="r"><a href="#s2">2</a></span></label></li>
+        <li><input type="checkbox" id="k7"><label for="k7">Sign the starter tax break form at the notary, and apply for NHG.<span class="r"><a href="#s2">2</a>,<a href="#s5">5</a></span></label></li>
+        <li><input type="checkbox" id="k8"><label for="k8">Put a financing condition in the contract, so you can walk away if the mortgage falls through.</label></li>
+        <li><input type="checkbox" id="k9"><label for="k9">Keep cash aside for the gap between the valuation and your offer.</label></li>
+        <li><input type="checkbox" id="k10"><label for="k10">If it is an apartment, read the owners' association papers first: the rules, the savings fund and the maintenance plan.</label></li>
       </ul>
     </div>
   </article>
@@ -474,40 +482,40 @@ footer.page p{max-width:64ch;margin:0}
     <div class="head">
       <div class="k">Step three</div>
       <h3>Save again, then the cafe</h3>
-      <div class="when">After the house &middot; a slower and longer phase</div>
+      <div class="when">After the house &middot; slower, and it takes longer</div>
     </div>
 
-    <p>The economics invert at this point. The house was inexpensive to enter because a mortgage carried almost all of it. A cafe is the reverse: nearly every euro must be your own or borrowed at commercial rates, and the sums are considerably larger.</p>
+    <p>Here the money works the other way round. The house was cheap to start because the bank paid for almost all of it. The cafe is the opposite. Almost every euro is your own, or borrowed at a high rate, and the amounts are much bigger.</p>
 
-    <p>The least expensive route is to <strong>lease premises already fitted for hospitality</strong> and take them over as a going concern. Even so, entry costs begin somewhere near <strong>€90,000</strong> once the deposit, the takeover, a cosmetic refresh and sufficient working capital for the opening months are accounted for.</p>
+    <p>The cheapest way in is to <strong>rent a place that is already built as a cafe</strong> and take it over. Even then you need about <strong>€90,000</strong> to start, once you count the deposit, the takeover, a light refresh, and enough money to survive the first months.</p>
 
-    <p>Converting a bare unit costs considerably more, because the fit-out is the largest item in the budget — extraction, grease trap, heavier power supply, sanitary facilities, acoustic insulation. Under a lease, most of that expenditure remains with the building when the tenancy ends.<span class="r"><a href="#s12">12</a></span></p>
+    <p>Turning an empty shell into a cafe costs far more. The fit-out is the biggest cost of all: extraction, grease trap, heavier power, toilets, sound insulation. And when you rent, most of that money stays in the building when you leave.<span class="r"><a href="#s12">12</a></span></p>
 
     <aside class="note">
-      <p class="lbl">Observation</p>
-      <h4>Where the largest saving lies</h4>
-      <p>Premises with functioning hospitality installations already in place avoid the single largest cost in the project. A bare unit appears cheaper per square metre and, in practice, almost always proves more expensive.</p>
+      <p class="lbl">Where you save the most</p>
+      <p>Find a place where the kitchen and the extraction already work. That single choice avoids the biggest cost in the whole project. An empty shell looks cheaper per square metre, but it almost always costs more in the end.</p>
     </aside>
 
-    <h4>Lease the premises rather than buying them</h4>
-    <p>Purchasing commercial premises attracts transfer tax at <strong>10.4%</strong>, the rate applied to anything that is not a dwelling, and one that remained unchanged while the residential rates were revised. It can be neither financed nor recovered, and banks lend a good deal less against commercial property than against a house.<span class="r"><a href="#s1">1</a></span> Lenders also expect two to three years of trading figures before considering a loan against a building, which will not exist at the outset.<span class="r"><a href="#s11">11</a></span></p>
-    <p>A lease is not a weak position here. Hospitality premises fall within a protected category of Dutch tenancy law, running in <strong>five-year terms with an automatic second term</strong> and substantial protection for the tenant. Ten years of security is sufficient to build something durable.<span class="r"><a href="#s14">14</a></span></p>
+    <h4>Rent the place. Do not buy it.</h4>
+    <p>If you buy business premises you pay <strong>10.4%</strong> transfer tax. That is the rate for anything that is not a home, and it stayed the same when the house rates changed. You cannot borrow it, and you never get it back. On top of that, banks lend much less against business property than against a house.<span class="r"><a href="#s1">1</a></span></p>
+    <p>Banks also want two or three years of trading figures before they lend against a building. You will not have those on day one.<span class="r"><a href="#s11">11</a></span></p>
+    <p>Renting is not a weak position here. Cafes and bars fall under a protected part of Dutch rental law: five years, then another five almost automatically, with strong rights for you as the tenant. Ten years is long enough to build something real.<span class="r"><a href="#s14">14</a></span></p>
 
     <aside class="note caution">
-      <p class="lbl">Caution</p>
-      <h4>Business debt can reach the house</h4>
-      <p>A sole trader and the business are the same legal person, so business debts are personal debts. Even within a company structure, lenders routinely require a personal guarantee from a first-time proprietor — and by then the most valuable asset available to secure it is the house.<span class="r"><a href="#s10">10</a></span></p>
-      <p>This is not an argument against the business. It is an argument for reading what is signed, and for keeping the distinction clear between borrowing for the cafe and pledging the house against it.</p>
+      <p class="lbl">Careful</p>
+      <h4>Business debt can reach your house</h4>
+      <p>If you trade as a sole trader, you and the business are the same person in law, so business debts are your debts. Even with a company, banks usually ask a first-time owner for a personal guarantee — and by then your house is the most valuable thing you have to offer.<span class="r"><a href="#s10">10</a></span></p>
+      <p>This is not a reason to skip the cafe. It is a reason to read what you sign, and to keep two things apart: borrowing money for the cafe, and putting the house behind the cafe.</p>
     </aside>
 
     <div class="do">
-      <h4>Actions</h4>
+      <h4>To do</h4>
       <ul class="todo">
-        <li><input type="checkbox" id="k11"><label for="k11">Rebuild an emergency reserve before anything else. Ownership brings maintenance, municipal charges and insurance that a tenant never meets.</label></li>
-        <li><input type="checkbox" id="k12"><label for="k12">Obtain the <i>Sociale Hygiëne</i> diploma. It is required for an alcohol licence, valid for life, and needs no premises — so it can be completed at any point, including during step one.<span class="r"><a href="#s15">15</a></span></label></li>
-        <li><input type="checkbox" id="k13"><label for="k13">Verify the zoning of any candidate address before anything else. Premises that do not permit hospitality use are of no value to this plan at any price.<span class="r"><a href="#s13">13</a></span></label></li>
-        <li><input type="checkbox" id="k14"><label for="k14">Confine the search to premises already fitted for hospitality.</label></li>
-        <li><input type="checkbox" id="k15"><label for="k15">Establish precisely what any personal guarantee places at risk before signing it.<span class="r"><a href="#s10">10</a></span></label></li>
+        <li><input type="checkbox" id="k11"><label for="k11">Build your emergency savings back up first. As an owner you now pay for maintenance, town taxes and insurance.</label></li>
+        <li><input type="checkbox" id="k12"><label for="k12">Get the <i>Sociale Hygiëne</i> diploma. You need it for an alcohol licence, it lasts for life, and it needs no building — so you can do it any time, even now.<span class="r"><a href="#s15">15</a></span></label></li>
+        <li><input type="checkbox" id="k13"><label for="k13">Check the zoning of any address before anything else. A cheap building that is not allowed to be a cafe is worth nothing to you.<span class="r"><a href="#s13">13</a></span></label></li>
+        <li><input type="checkbox" id="k14"><label for="k14">Only look at places already built for food and drink.</label></li>
+        <li><input type="checkbox" id="k15"><label for="k15">Before you sign any personal guarantee, work out exactly what you could lose.<span class="r"><a href="#s10">10</a></span></label></li>
       </ul>
     </div>
   </article>
@@ -516,19 +524,19 @@ footer.page p{max-width:64ch;margin:0}
   <article class="step">
     <div class="head">
       <div class="k">Step four</div>
-      <h3>The longer term</h3>
-      <div class="when">Once the house is owned and the cafe is trading</div>
+      <h3>Later</h3>
+      <div class="when">Once you own the house and the cafe is running</div>
     </div>
 
-    <p>Deliberately left open. Reaching this point brings information unavailable now: whether the cafe earns, what the house has become worth, and whether hospitality still appeals.</p>
+    <p>Left open on purpose. By then you will know things you cannot know now: whether the cafe makes money, what the house is worth, and whether you still want to run a cafe at all.</p>
 
-    <p>The plausible options are a larger house, purchasing the premises already leased, a second property, or simply carrying less debt. None can be chosen sensibly today, so nothing is listed here to act on.</p>
+    <p>The likely choices are a bigger house, buying the cafe you have been renting, a second property, or simply having less debt. None of these can be decided today, so there is nothing to tick here.</p>
 
-    <p>Three things will hold true whenever the question arises:</p>
+    <p>Three things will still be true whenever you get there.</p>
     <ul>
-      <li>A trading record is what opens business lending. Two or three years of figures materially changes what a bank will consider.<span class="r"><a href="#s11">11</a></span></li>
-      <li>Government-backed small-business credit has a ceiling, so beyond a certain scale the ordinary banks become unavoidable.<span class="r"><a href="#s11">11</a></span></li>
-      <li>Buying property to let is a different regime from buying to occupy — less lending, heavier taxation, more regulation — and those rules have been revised repeatedly.<span class="r"><a href="#s1">1</a>,<a href="#s8">8</a></span></li>
+      <li>Trading figures are what open up business lending. Two or three years of numbers changes what a bank will do for you.<span class="r"><a href="#s11">11</a></span></li>
+      <li>Government-backed loans for small businesses have a limit. Above that, you need a normal bank.<span class="r"><a href="#s11">11</a></span></li>
+      <li>Buying a house to rent out is a different world from buying one to live in: you can borrow less, you pay more tax, and there are more rules. Those rules also keep changing.<span class="r"><a href="#s1">1</a>,<a href="#s8">8</a></span></li>
     </ul>
   </article>
 </section>
@@ -536,72 +544,73 @@ footer.page p{max-width:64ch;margin:0}
 <!-- ============ IV ============ -->
 <section id="money">
   <h2><span class="num">IV</span> Money</h2>
-  <p class="lede">Three aspects of the cash that are commonly misunderstood.</p>
+  <p class="lede">Three things about the cash that are easy to get wrong.</p>
 
   <h3>What the cash is for</h3>
-  <p>It is not a deposit. For a first house the Dutch system does not really require one, since the mortgage covers the price. What is being saved for is the set of costs that cannot be financed and fall due on the day of transfer.<span class="r"><a href="#s4">4</a></span></p>
+  <p>It is not a deposit. For a first house you do not really need one, because the mortgage covers the price. You are saving for the costs you cannot borrow, and they all fall due on the day you get the keys.<span class="r"><a href="#s4">4</a></span></p>
 
   <figure class="tbl">
     <figcaption><b>Table 2</b> Where the cash goes.</figcaption>
     <table class="stack">
       <thead>
-        <tr><th scope="col">Item</th><th scope="col">Note</th></tr>
+        <tr><th scope="col">Item</th><th scope="col">What it is</th></tr>
       </thead>
       <tbody>
-        <tr><td data-label="Item"><b>Mortgage advice</b></td><td data-label="Note">Usually the largest single item, and worth paying for.</td></tr>
-        <tr><td data-label="Item"><b>Notary</b></td><td data-label="Note">Transfer deed and mortgage deed. Fees vary between offices, so comparison is worthwhile.</td></tr>
-        <tr><td data-label="Item"><b>Valuation</b></td><td data-label="Note">Required by the lender, and it also fixes the ceiling on what the mortgage will cover.</td></tr>
-        <tr><td data-label="Item"><b>NHG premium</b></td><td data-label="Note">A small percentage of the loan, paid once, in return for the lowest rate and the guarantee.<span class="r"><a href="#s5">5</a></span></td></tr>
-        <tr><td data-label="Item"><b>Transfer tax</b></td><td data-label="Note">Nil, where the purchase is made under 35, to live in, and the exemption is unused.<span class="r"><a href="#s1">1</a></span></td></tr>
-        <tr><td data-label="Item"><b>Buying agent</b></td><td data-label="Note">Optional, and the reason to aim above the minimum rather than at it.</td></tr>
-        <tr><td data-label="Item"><b>Bid above valuation</b></td><td data-label="Note">Paid in cash, and impossible to budget for precisely in advance.</td></tr>
+        <tr><td data-label="Item"><b>Mortgage advice</b></td><td data-label="What it is">Usually the biggest single item, and worth paying for.</td></tr>
+        <tr><td data-label="Item"><b>Notary</b></td><td data-label="What it is">Two deeds: one for the house, one for the mortgage. Prices differ between offices, so it is worth comparing.</td></tr>
+        <tr><td data-label="Item"><b>Valuation</b></td><td data-label="What it is">The bank requires it. It also sets the limit on what the mortgage will cover.</td></tr>
+        <tr><td data-label="Item"><b>NHG fee</b></td><td data-label="What it is">A small percentage of the loan, paid once. It buys the lowest rate and the guarantee.<span class="r"><a href="#s5">5</a></span></td></tr>
+        <tr><td data-label="Item"><b>Transfer tax</b></td><td data-label="What it is">Nothing, if you buy under 35, to live in, and have never used the break.<span class="r"><a href="#s1">1</a></span></td></tr>
+        <tr><td data-label="Item"><b>Buying agent</b></td><td data-label="What it is">Optional, and the reason to save above the minimum rather than exactly at it.</td></tr>
+        <tr><td data-label="Item"><b>Bid above the valuation</b></td><td data-label="What it is">Paid in cash, and impossible to plan for exactly.</td></tr>
       </tbody>
     </table>
   </figure>
 
-  <h3>The house and the cafe draw on the same savings</h3>
-  <p>They are not separate budgets, which is the substantive reason the order matters. Buying the house first consumes a small amount of cash and leaves an asset behind. Starting the cafe first would consume everything available and leave you still renting.</p>
-  <p>There is a second reason, of timing. The exemption lapses at 35, and a young business tends to <em>reduce</em> what a lender will offer, because self-employed income is assessed on several years of accounts rather than on a payslip. Beginning with the business therefore makes the mortgage harder to obtain during precisely the years in which the exemption is still available.<span class="r"><a href="#s6">6</a></span></p>
+  <h3>The house and the cafe use the same savings</h3>
+  <p>There is only one pot of money. That is the real reason the order matters. Buying the house first uses a small amount of cash and leaves you owning something. Starting the cafe first would use everything, and you would still be renting.</p>
+  <p>Timing matters too. The tax break ends at 35. And a new business makes banks lend you <em>less</em>, not more, because they judge self-employed income on years of accounts instead of a payslip. So starting the business first makes the mortgage harder in exactly the years when the tax break still works.<span class="r"><a href="#s6">6</a></span></p>
 
-  <h3>Why letting property is not the opening move</h3>
-  <p>Property bought to let is the weaker proposition at every point of entry. Less can be borrowed against it, transfer tax is <strong>8%</strong> rather than nothing, neither the exemption nor NHG is available, the tax treatment is heavier, and rents are capped across most of this price range. It also fails the basic test of housing you, since rent would still be payable elsewhere.<span class="r"><a href="#s1">1</a>,<a href="#s8">8</a></span></p>
-  <p>It remains a reasonable option at step four, once a house is owned and equity has accumulated. It is not a way to begin.</p>
+  <h3>Why buying to rent out is not the first move</h3>
+  <p>A house bought to rent out is worse in every way at the start. You can borrow less against it. Transfer tax is <strong>8%</strong> instead of nothing. There is no starter break and no NHG. The tax on it is heavier. And rents are capped at this price level. It also does not solve your own housing, because you would still pay rent somewhere else.<span class="r"><a href="#s1">1</a>,<a href="#s8">8</a></span></p>
+  <p>It is a fair option later, once you own a house and have built up value in it. It is not a way to begin.</p>
 </section>
 
 <!-- ============ V ============ -->
 <section id="terms">
-  <h2><span class="num">V</span> Terms</h2>
-  <p class="lede">The Dutch vocabulary, in roughly the order it will be encountered.</p>
+  <h2><span class="num">V</span> Words you will meet</h2>
+  <p class="lede">The Dutch terms, in roughly the order you will run into them.</p>
 
   <h3>Transfer tax: the four rates</h3>
-  <p>A single tax carries four rates, according to what is bought and what is done with it. Confusing them is the most expensive error available in this plan. The 8% rate for dwellings that are not a main residence was reduced from a higher figure in 2026, while the 10.4% rate for everything that is not a dwelling was left unchanged — which is why older commentary found online frequently conflicts.<span class="r"><a href="#s1">1</a></span></p>
+  <p>It is one tax with four rates, depending on what you buy and what you use it for. Mixing them up is the most expensive mistake in this plan.</p>
+  <p>One thing to know: in 2026 the rate for a house you do <em>not</em> live in dropped to 8%, while the 10.4% rate for anything that is not a house stayed the same. That is why older advice you find online often disagrees with itself.<span class="r"><a href="#s1">1</a></span></p>
 
   <figure class="tbl">
-    <figcaption><b>Table 3</b> Which rate applies to which purchase.</figcaption>
+    <figcaption><b>Table 3</b> Which rate applies to what.</figcaption>
     <table class="stack">
       <thead>
-        <tr><th scope="col">Rate</th><th scope="col">Applies to</th><th scope="col">Relevance</th></tr>
+        <tr><th scope="col">Rate</th><th scope="col">Applies to</th><th scope="col">Matters to you</th></tr>
       </thead>
       <tbody>
         <tr>
           <td data-label="Rate" class="num-col"><b>0%</b></td>
-          <td data-label="Applies to">A dwelling to be lived in, bought under 35, exemption previously unused, value below the ceiling.</td>
-          <td data-label="Relevance"><b>Step two.</b> The rate to secure.</td>
+          <td data-label="Applies to">A house you will live in, bought under 35, break never used before, price under the limit.</td>
+          <td data-label="Matters to you"><b>Step two.</b> This is the one you want.</td>
         </tr>
         <tr>
           <td data-label="Rate" class="num-col"><b>2%</b></td>
-          <td data-label="Applies to">A dwelling to be lived in, where the exemption does not apply.</td>
-          <td data-label="Relevance">The next house, after the stepping stone.</td>
+          <td data-label="Applies to">A house you will live in, when the break does not apply.</td>
+          <td data-label="Matters to you">Your next house, after this one.</td>
         </tr>
         <tr>
           <td data-label="Rate" class="num-col"><b>8%</b></td>
-          <td data-label="Applies to">A dwelling <em>not</em> used as a main residence — a letting, a second home, an investment.</td>
-          <td data-label="Relevance">Step four only, if at all.</td>
+          <td data-label="Applies to">A house you will <em>not</em> live in — one you rent out, a second home, or an investment.</td>
+          <td data-label="Matters to you">Step four only, if ever.</td>
         </tr>
         <tr>
           <td data-label="Rate" class="num-col"><b>10.4%</b></td>
-          <td data-label="Applies to">Anything that is not a dwelling — a cafe, shop, office or parcel of land.</td>
-          <td data-label="Relevance">The reason to lease the premises rather than buy them.</td>
+          <td data-label="Applies to">Anything that is not a house — a cafe, shop, office or piece of land.</td>
+          <td data-label="Matters to you">The reason to rent the cafe, not buy it.</td>
         </tr>
       </tbody>
     </table>
@@ -611,83 +620,83 @@ footer.page p{max-width:64ch;margin:0}
   <dl class="gloss">
     <div>
       <dt><span class="nl">kosten koper</span> — buyer's costs</dt>
-      <dd>The costs above the purchase price: notary, valuation, advice, and transfer tax where due. Always met from your own funds, never from the mortgage. Listings marked <i>k.k.</i> indicate these fall to the buyer.</dd>
+      <dd>The costs on top of the price: notary, valuation, advice, and transfer tax if you owe any. Always your own money, never the mortgage. A listing marked <i>k.k.</i> means you pay these.</dd>
     </div>
     <div>
-      <dt><span class="nl">startersvrijstelling</span> — first-time-buyer exemption</dt>
-      <dd>Nil transfer tax in place of 2%. Requires being under 35 at the moment of transfer, occupying the dwelling for the longer term, never having claimed it before, and a value below the ceiling. Declared at the notary.<span class="r"><a href="#s2">2</a></span></dd>
+      <dt><span class="nl">startersvrijstelling</span> — starter tax break</dt>
+      <dd>No transfer tax instead of 2%. You must be under 35 on the day the house becomes yours, live in it yourself, never have used the break before, and stay under a price limit. You sign for it at the notary.<span class="r"><a href="#s2">2</a></span></dd>
     </div>
     <div>
       <dt><span class="nl">NHG</span> — national mortgage guarantee</dt>
-      <dd>A state-backed guarantee available below a loan ceiling. A one-off premium secures the lowest interest rate and can cover residual debt where the house must be sold after job loss, illness, divorce or death.<span class="r"><a href="#s5">5</a></span></dd>
+      <dd>A government guarantee you can get on loans below a certain size. You pay a one-off fee. You get the lowest interest rate, and it can cover leftover debt if you are forced to sell after job loss, illness, divorce or death.<span class="r"><a href="#s5">5</a></span></dd>
     </div>
     <div>
-      <dt><span class="nl">intentieverklaring</span> — statement of intent</dt>
-      <dd>A written statement from an employer of their intention to offer a permanent contract. Lenders accept it in place of one, which makes it the least expensive way to unblock a mortgage application.</dd>
+      <dt><span class="nl">intentieverklaring</span> — letter of intent</dt>
+      <dd>A letter from your employer saying they intend to give you a permanent contract. Banks accept it instead of the contract itself, which makes it the cheapest way to unblock a mortgage.</dd>
     </div>
     <div>
       <dt><span class="nl">opkoopbescherming</span> — buy-up protection</dt>
-      <dd>A municipal rule prohibiting the letting of a dwelling without a permit for four years after transfer. Common in cities. It imposes no duty to live there and no restriction on selling.<span class="r"><a href="#s8">8</a></span></dd>
+      <dd>A town rule that stops you renting the house out without a permit for four years after you buy. Common in cities. It does not force you to live there, and it does not stop you selling.<span class="r"><a href="#s8">8</a></span></dd>
     </div>
     <div>
       <dt><span class="nl">Starterslening</span> — starter loan</dt>
-      <dd>A supplementary municipal loan alongside the mortgage, carrying no monthly payment in the early years. Amounts differ by municipality, budgets are exhausted, and it generally requires this to be a first owner-occupied home.<span class="r"><a href="#s7">7</a></span></dd>
+      <dd>An extra loan from the town, on top of your mortgage, with nothing to pay each month in the first years. Amounts differ per town, the money runs out, and it usually has to be your first house.<span class="r"><a href="#s7">7</a></span></dd>
     </div>
     <div>
       <dt><span class="nl">VvE</span> — owners' association</dt>
-      <dd>Buying an apartment carries automatic membership. Its finances, reserve fund and rules pass to you, and are therefore part of what is being bought.</dd>
+      <dd>Buy an apartment and you join it automatically. Its money, its savings fund and its rules become yours too, so they are part of what you are buying.</dd>
     </div>
     <div>
-      <dt><span class="nl">Sociale Hygiëne</span> — social hygiene diploma</dt>
-      <dd>Required for an alcohol licence, valid for life, and obtainable years before any premises exist.<span class="r"><a href="#s15">15</a></span></dd>
+      <dt><span class="nl">Sociale Hygiëne</span> — hospitality diploma</dt>
+      <dd>Needed for an alcohol licence. It lasts for life, and you can get it years before you have any building.<span class="r"><a href="#s15">15</a></span></dd>
     </div>
     <div>
-      <dt><span class="nl">casco</span> — bare shell</dt>
-      <dd>A unit without fit-out. Cheaper per square metre and usually more expensive in total, since every installation is paid for from scratch.</dd>
+      <dt><span class="nl">casco</span> — empty shell</dt>
+      <dd>A space with nothing fitted in it. Cheaper per square metre, and usually more expensive in total, because you pay for every installation yourself.</dd>
     </div>
   </dl>
 </section>
 
 <!-- ============ VI ============ -->
 <section id="change">
-  <h2><span class="num">VI</span> Contingencies</h2>
-  <p class="lede">Four departures from the plan, and what each one actually costs.</p>
+  <h2><span class="num">VI</span> If things change</h2>
+  <p class="lede">Four things that could go differently, and what each one really costs.</p>
 
   <figure class="tbl">
-    <figcaption><b>Table 4</b> Departures and their consequences.</figcaption>
+    <figcaption><b>Table 4</b> What to do if the plan slips.</figcaption>
     <table class="stack">
       <thead>
-        <tr><th scope="col">If</th><th scope="col">Consequence</th></tr>
+        <tr><th scope="col">If</th><th scope="col">Then</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td data-label="If"><b>The permanent contract is delayed</b></td>
-          <td data-label="Consequence">Request the <i>intentieverklaring</i> and hold May 2028. If neither materialises, move the date: roughly three years of margin remain before the exemption lapses.</td>
+          <td data-label="If"><b>The permanent contract is late</b></td>
+          <td data-label="Then">Ask for the <i>intentieverklaring</i> and keep May 2028. If neither comes, move the date. You still have about three years before the tax break ends.</td>
         </tr>
         <tr>
-          <td data-label="If"><b>The salary settles below €80,000</b></td>
-          <td data-label="Consequence">Borrowing moves with it on the same multiple. This changes which house, not whether one is bought. The cash target and the final date are unaffected.<span class="r"><a href="#s6">6</a></span></td>
+          <td data-label="If"><b>The salary ends up below €80,000</b></td>
+          <td data-label="Then">You can borrow less, in proportion. That changes which house you buy, not whether you buy one. The cash you need and the final date do not move.<span class="r"><a href="#s6">6</a></span></td>
         </tr>
         <tr>
-          <td data-label="If"><b>Bids keep failing</b></td>
-          <td data-label="Consequence">Almost always a shortage of cash rather than of borrowing. Raise the savings target rather than the price range.</td>
+          <td data-label="If"><b>You keep losing bids</b></td>
+          <td data-label="Then">This is almost always too little cash, not too little borrowing. Save more, rather than looking at cheaper houses.</td>
         </tr>
         <tr>
-          <td data-label="If"><b>The cafe becomes pressing sooner</b></td>
-          <td data-label="Consequence">Hold the order. Self-employed income makes a mortgage harder rather than easier to obtain, and the exemption does not wait beyond 35.<span class="r"><a href="#s2">2</a></span></td>
+          <td data-label="If"><b>The cafe starts to feel urgent</b></td>
+          <td data-label="Then">Keep the order anyway. Being self-employed makes a mortgage harder, not easier, and the tax break will not wait past 35.<span class="r"><a href="#s2">2</a></span></td>
         </tr>
       </tbody>
     </table>
   </figure>
 
   <aside class="note caution">
-    <p class="lbl">Open questions</p>
-    <h4>What this document cannot settle</h4>
+    <p class="lbl">Still open</p>
+    <h4>What this page cannot tell you</h4>
     <ul>
-      <li>The actual maximum loan. Only an adviser produces that, and it depends on existing debts and the particular lender.<span class="r"><a href="#s6">6</a></span></li>
-      <li>Which municipality. It governs price, the availability of a starter loan, and the letting rules simultaneously.<span class="r"><a href="#s9">9</a></span></li>
-      <li>Whether residence status bears on any of this. Nothing here examines it.</li>
-      <li>Whether the purchase is made alone or jointly. Two incomes change the borrowing arithmetic, and both names on the deed carry consequences worth an hour of advice — though the plan holds either way.</li>
+      <li>Your real maximum loan. Only an adviser can give you that, and it depends on your debts and on the bank.<span class="r"><a href="#s6">6</a></span></li>
+      <li>Which town. It decides the price, the starter loan and the renting rules all at once.<span class="r"><a href="#s9">9</a></span></li>
+      <li>Whether your residence status affects any of this. Nothing here checks it.</li>
+      <li>Whether you buy alone or with someone. Two salaries change the sums, and both names on the deed has consequences worth an hour with an adviser. The plan works either way.</li>
     </ul>
   </aside>
 </section>
@@ -695,27 +704,27 @@ footer.page p{max-width:64ch;margin:0}
 <!-- ============ VII ============ -->
 <section id="sources">
   <h2><span class="num">VII</span> Sources</h2>
-  <p class="lede">Official and primary sources wherever one exists. Every figure above refers to one of these.</p>
+  <p class="lede">Official sources wherever one exists. Every number above points to one of these.</p>
 
   <ol class="src">
-    <li id="s1"><a href="https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/woning/overdrachtsbelasting/tarieven_overdrachtsbelasting/het_tarief_van_de_overdrachtbelasting">Belastingdienst — transfer tax rates</a><span class="what">All four rates in a single official table, including the distinction between 8% and 10.4%.</span></li>
-    <li id="s2"><a href="https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/woning/overdrachtsbelasting/startersvrijstelling/startersvrijstelling">Belastingdienst — startersvrijstelling</a><span class="what">The four conditions, the age test at the moment of transfer, and the declaration.</span></li>
-    <li id="s3"><a href="https://www.rijksoverheid.nl/vraag-en-antwoord/huis-kopen/vrijstelling-overdrachtsbelasting">Rijksoverheid — exemption from transfer tax</a><span class="what">The plain-language account, and confirmation that a home owned previously does not disqualify a buyer.</span></li>
-    <li id="s4"><a href="https://www.rijksoverheid.nl/onderwerpen/huis-kopen">Rijksoverheid — buying a house</a><span class="what">Government hub covering purchase, financing, and the costs that fall outside the mortgage.</span></li>
-    <li id="s5"><a href="https://www.nhg.nl/">NHG — Nationale Hypotheek Garantie</a><span class="what">The guarantee itself: current ceiling, premium, and the circumstances it covers.</span></li>
-    <li id="s6"><a href="https://www.nibud.nl/onderwerpen/thuis/hypotheek/">Nibud — mortgage norms</a><span class="what">The body behind the annual borrowing rules: income, existing debts, and contract type.</span></li>
-    <li id="s7"><a href="https://www.svn.nl/starterslening">SVn — Starterslening</a><span class="what">The starter loan, its conditions, and the municipalities offering it.</span></li>
-    <li id="s8"><a href="https://www.volkshuisvestingnederland.nl/onderwerpen/aanpak-woningnood/opkoopbescherming">Volkshuisvesting Nederland — opkoopbescherming</a><span class="what">Official account of the four-year prohibition on letting without a permit, and the exceptions to it.</span></li>
-    <li id="s9"><a href="https://financieren.nl/opkoopbescherming/">Opkoopbescherming by municipality</a><span class="what">Which municipalities apply it, and at what value limit. A secondary source, useful for a first check.</span></li>
-    <li id="s10"><a href="https://www.kvk.nl/">KVK — Chamber of Commerce</a><span class="what">Registration, legal forms, liability, and free advice for those starting out.</span></li>
-    <li id="s11"><a href="https://www.qredits.nl/">Qredits</a><span class="what">Microcredit and small-business lending open to new proprietors, with the ceilings that shape step three.</span></li>
-    <li id="s12"><a href="https://ondernemersplein.overheid.nl/">Ondernemersplein</a><span class="what">Government portal for business regulation, including requirements for hospitality premises.</span></li>
-    <li id="s13"><a href="https://www.omgevingsloket.nl/">Omgevingsloket</a><span class="what">"Regels op de kaart" — establishes whether an address permits hospitality use.</span></li>
-    <li id="s14"><a href="https://wetten.overheid.nl/BWBR0005290/">Burgerlijk Wetboek Boek 7</a><span class="what">The tenancy law itself. Hospitality premises fall under art. 7:290, the protected five-plus-five regime.</span></li>
-    <li id="s15"><a href="https://www.svh.nl/">SVH — Sociale Hygiëne</a><span class="what">The diploma required for an alcohol licence, and how to sit the examination.</span></li>
+    <li id="s1"><a href="https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/woning/overdrachtsbelasting/tarieven_overdrachtsbelasting/het_tarief_van_de_overdrachtbelasting">Belastingdienst — transfer tax rates</a><span class="what">All four rates in one official table, including the difference between 8% and 10.4%.</span></li>
+    <li id="s2"><a href="https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/woning/overdrachtsbelasting/startersvrijstelling/startersvrijstelling">Belastingdienst — starter tax break</a><span class="what">The four conditions, the age test on the day of transfer, and the form you sign.</span></li>
+    <li id="s3"><a href="https://www.rijksoverheid.nl/vraag-en-antwoord/huis-kopen/vrijstelling-overdrachtsbelasting">Rijksoverheid — transfer tax exemption</a><span class="what">The plain-language version, and confirmation that owning a home before does not disqualify you.</span></li>
+    <li id="s4"><a href="https://www.rijksoverheid.nl/onderwerpen/huis-kopen">Rijksoverheid — buying a house</a><span class="what">Government hub on buying, financing, and the costs the mortgage will not cover.</span></li>
+    <li id="s5"><a href="https://www.nhg.nl/">NHG — Nationale Hypotheek Garantie</a><span class="what">The guarantee itself: the current limit, the fee, and what it covers.</span></li>
+    <li id="s6"><a href="https://www.nibud.nl/onderwerpen/thuis/hypotheek/">Nibud — mortgage rules</a><span class="what">The body behind the yearly borrowing rules: income, debts and contract type.</span></li>
+    <li id="s7"><a href="https://www.svn.nl/starterslening">SVn — Starterslening</a><span class="what">The starter loan, its conditions, and which towns offer it.</span></li>
+    <li id="s8"><a href="https://www.volkshuisvestingnederland.nl/onderwerpen/aanpak-woningnood/opkoopbescherming">Volkshuisvesting Nederland — opkoopbescherming</a><span class="what">Official explanation of the four-year ban on renting out without a permit, and the exceptions.</span></li>
+    <li id="s9"><a href="https://financieren.nl/opkoopbescherming/">Opkoopbescherming by town</a><span class="what">Which towns apply it, and up to what value. A secondary source, but useful for a first check.</span></li>
+    <li id="s10"><a href="https://www.kvk.nl/">KVK — Chamber of Commerce</a><span class="what">Registration, legal forms, liability, and free advice when starting out.</span></li>
+    <li id="s11"><a href="https://www.qredits.nl/">Qredits</a><span class="what">Small loans and microcredit open to new business owners, with the limits that shape step three.</span></li>
+    <li id="s12"><a href="https://ondernemersplein.overheid.nl/">Ondernemersplein</a><span class="what">Government portal for business rules, including what a hospitality space must have.</span></li>
+    <li id="s13"><a href="https://www.omgevingsloket.nl/">Omgevingsloket</a><span class="what">"Regels op de kaart" — check whether an address is allowed to be a cafe.</span></li>
+    <li id="s14"><a href="https://wetten.overheid.nl/BWBR0005290/">Burgerlijk Wetboek Boek 7</a><span class="what">The rental law itself. Cafes and bars fall under art. 7:290, the protected five-plus-five rules.</span></li>
+    <li id="s15"><a href="https://www.svh.nl/">SVH — Sociale Hygiëne</a><span class="what">The diploma you need for an alcohol licence, and how to take the exam.</span></li>
   </ol>
 
-  <p class="colophon">Compiled in 2026. Rates, ceilings and thresholds are revised annually, and several rules bearing on the later steps were already scheduled to change. Consult the sources above before committing to anything that costs money.</p>
+  <p class="colophon">Put together in 2026. Rates, limits and thresholds are updated every year, and several rules affecting the later steps were already due to change. Check the sources above before you spend money on anything here.</p>
 </section>
 
 </div>
@@ -723,7 +732,7 @@ footer.page p{max-width:64ch;margin:0}
 
 <footer class="page">
   <div class="wrap">
-    <p>Personal planning notes, not financial, tax or legal advice. Confirm anything that costs money with a mortgage adviser, a notary or an accountant before relying on it.</p>
+    <p>Personal planning notes, not financial, tax or legal advice. Check anything that costs money with a mortgage adviser, a notary or an accountant first.</p>
   </div>
 </footer>
 
