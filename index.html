@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -78,25 +77,66 @@ nav.top{
   position:sticky;top:0;z-index:50;
   background:rgba(14,16,17,.97);
   border-bottom:1px solid var(--line);
-  backdrop-filter:saturate(140%) blur(8px);
-  -webkit-backdrop-filter:saturate(140%) blur(8px);
+  backdrop-filter:saturate(140%) blur(10px);
+  -webkit-backdrop-filter:saturate(140%) blur(10px);
 }
-nav.top ul{
-  list-style:none;margin:0;padding:0;
-  display:flex;gap:0;overflow-x:auto;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;-ms-overflow-style:none;
+.nav-bar{display:flex;align-items:center;justify-content:space-between;height:50px}
+.nav-label{
+  font:600 .7rem/1 var(--ui);letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);
 }
-nav.top ul::-webkit-scrollbar{display:none}
-nav.top a{
-  display:block;white-space:nowrap;
-  padding:13px 15px 12px;
-  font:500 .8rem/1 var(--ui);letter-spacing:.01em;
-  color:var(--muted);text-decoration:none;
-  border-bottom:2px solid transparent;
+.nav-toggle{
+  display:flex;align-items:center;gap:9px;
+  margin:0;padding:9px 0 9px 14px;border:0;background:none;
+  color:var(--accent);cursor:pointer;
+  font:600 .72rem/1 var(--ui);letter-spacing:.14em;text-transform:uppercase;
+  -webkit-tap-highlight-color:transparent;
 }
-nav.top li:first-child a{padding-left:0}
-nav.top a:hover,nav.top a:focus{color:var(--accent);border-bottom-color:var(--accent-deep)}
+.nav-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.nav-bars{display:block;position:relative;width:17px;height:11px}
+.nav-bars i{
+  position:absolute;left:0;right:0;height:1.5px;border-radius:1px;
+  background:currentColor;transition:transform .22s ease,opacity .16s ease;
+}
+.nav-bars i:nth-child(1){top:0}
+.nav-bars i:nth-child(2){top:4.75px}
+.nav-bars i:nth-child(3){top:9.5px}
+nav.top.is-open .nav-bars i:nth-child(1){transform:translateY(4.75px) rotate(45deg)}
+nav.top.is-open .nav-bars i:nth-child(2){opacity:0}
+nav.top.is-open .nav-bars i:nth-child(3){transform:translateY(-4.75px) rotate(-45deg)}
+
+nav.top ul{list-style:none;margin:0;padding:0;display:none}
+nav.top.is-open ul{display:block;padding-bottom:10px}
+nav.top ul a{
+  display:block;padding:13px 2px;
+  border-top:1px solid var(--line-soft);
+  font:500 .96rem/1.3 var(--ui);
+  color:var(--text);text-decoration:none;
+}
+nav.top ul a:active{color:var(--accent)}
+
+/* scroll progress */
+.progress{position:absolute;left:0;right:0;bottom:-1px;height:2px;pointer-events:none}
+.progress span{
+  display:block;height:100%;width:0;
+  background:var(--accent);box-shadow:0 0 7px rgba(207,174,114,.45);
+  transition:width .09s linear;
+}
+
+@media (min-width:800px){
+  .nav-bar{display:none}
+  nav.top ul{
+    display:flex;gap:0;padding:0;
+  }
+  nav.top ul a{
+    padding:13px 13px 12px;border-top:0;
+    border-bottom:2px solid transparent;
+    white-space:nowrap;font-size:.79rem;letter-spacing:.01em;
+    color:var(--muted);
+  }
+  nav.top ul li:first-child a{padding-left:0}
+  nav.top ul a:hover,nav.top ul a:focus{color:var(--accent);border-bottom-color:var(--accent-deep)}
+}
 
 /* ---------- sections ---------- */
 main{padding:0 0 64px}
@@ -193,7 +233,21 @@ aside.note p:last-child,aside.note ul:last-child{margin-bottom:0}
 
 /* ---------- action blocks ---------- */
 .do{margin:28px 0 0;padding:18px 0 0;border-top:1px solid var(--line)}
-.do > h4{margin:0 0 4px;color:var(--accent)}
+.do > h4{
+  margin:0 0 8px;color:var(--accent);
+  display:flex;align-items:center;gap:12px;
+}
+.do .count{
+  margin-left:auto;font-weight:600;letter-spacing:.1em;
+  color:var(--dim);font-variant-numeric:tabular-nums;
+}
+.do.is-done .count{color:var(--accent)}
+.pbar{height:2px;background:var(--line-soft);border-radius:1px;overflow:hidden;margin:0 0 2px}
+.pbar span{
+  display:block;height:100%;width:0;border-radius:1px;
+  background:var(--accent-deep);transition:width .28s ease,background .28s ease;
+}
+.do.is-done .pbar span{background:var(--accent)}
 
 /* ---------- checkboxes ---------- */
 .todo{list-style:none;padding-left:0;margin:4px 0;max-width:none}
@@ -309,18 +363,26 @@ footer.page p{max-width:62ch;margin:0}
   </div>
 </header>
 
-<nav class="top" aria-label="Sections">
+<nav class="top" id="nav" aria-label="Sections">
   <div class="wrap">
-    <ul>
+    <div class="nav-bar">
+      <span class="nav-label">Contents</span>
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">
+        <span class="nav-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+        Menu
+      </button>
+    </div>
+    <ul id="navMenu">
       <li><a href="#how">How to read</a></li>
       <li><a href="#position">Where you are</a></li>
       <li><a href="#steps">Four steps</a></li>
       <li><a href="#money">Money</a></li>
       <li><a href="#terms">Words</a></li>
-      <li><a href="#change">If things change</a></li>
+      <li><a href="#change">If it changes</a></li>
       <li><a href="#sources">Sources</a></li>
     </ul>
   </div>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
 </nav>
 
 <main id="main">
@@ -360,7 +422,7 @@ footer.page p{max-width:62ch;margin:0}
         </tr>
         <tr>
           <td data-label="Item"><b>Latest possible</b></td>
-          <td data-label="Where it stands">Your 35th birthday, about three years after that.</td>
+          <td data-label="Where it stands">Your 35th birthday, only a few months after that.</td>
         </tr>
         <tr>
           <td data-label="Item"><b>Job</b></td>
@@ -394,11 +456,12 @@ footer.page p{max-width:62ch;margin:0}
     <p>One warning about the 4 to 4.5 rule: it is only a rough guide. The real number comes from tables that change every year, and it moves with interest rates and with any debts you have. So the number to trust is the one an adviser writes down for you.<span class="r"><a href="#s6">6</a></span></p>
   </aside>
 
-  <aside class="note">
-    <p class="lbl">Good news</p>
-    <h4>Why May 2028 is a good date to aim for</h4>
-    <p>May 2028 is about three years before you turn 35. That gap is the best thing in this plan.</p>
-    <p>It turns the age limit into a backup instead of a threat. If your contract comes late, if you want to save longer, or if a sale falls apart at the last minute, you lose time but not the plan. The date can move more than once and you still keep the tax break.</p>
+  <aside class="note caution">
+    <p class="lbl">Careful</p>
+    <h4>May 2028 leaves less room than it looks</h4>
+    <p>Your 35th birthday comes only a few months after May 2028. This is not a relaxed target with years to spare. It sits close to the limit.</p>
+    <p>That makes delays expensive. A contract that arrives late, a few extra months of saving, or one sale falling apart near the end could each push you past the date. There is room for one small slip, not several.</p>
+    <p>And if the house becomes yours after your birthday, you pay 2% instead of nothing. On a house in your range that is roughly <strong>€6,400 to €7,200</strong><span class="calc">calc</span> — about the same as all the cash you spent step one saving. So treat May 2028 as the latest comfortable date, not the goal. If you can be ready earlier, be ready earlier.</p>
   </aside>
 </section>
 
@@ -424,7 +487,8 @@ footer.page p{max-width:62ch;margin:0}
     <p>Two other things change how much you can borrow. Student debt counts against you, but only the amount you pay each month now, not the original loan.<span class="r"><a href="#s6">6</a></span> And do not buy any Dutch property before this one. The starter tax break works only once, and any use spends it. A house you own in another country does not matter — the only question is whether you have used this Dutch break before.<span class="r"><a href="#s2">2</a>,<a href="#s3">3</a></span></p>
 
     <div class="do">
-      <h4>To do</h4>
+      <h4>To do <span class="count">0 / 5</span></h4>
+      <div class="pbar"><span></span></div>
       <ul class="todo">
         <li><input type="checkbox" id="k1"><label for="k1">Open a separate savings account. Set up a monthly transfer of about €480, or €715 if you want more room.<span class="calc">calc</span></label></li>
         <li><input type="checkbox" id="k2"><label for="k2">Ask your employer, in writing, what you need to do to get a permanent contract — and whether they will give you an <i>intentieverklaring</i> in the meantime.</label></li>
@@ -466,7 +530,8 @@ footer.page p{max-width:62ch;margin:0}
     </aside>
 
     <div class="do">
-      <h4>To do</h4>
+      <h4>To do <span class="count">0 / 5</span></h4>
+      <div class="pbar"><span></span></div>
       <ul class="todo">
         <li><input type="checkbox" id="k6"><label for="k6">Make sure the notary date — the day the house becomes yours — is well before your 35th birthday. The contract date does not count.<span class="r"><a href="#s2">2</a></span></label></li>
         <li><input type="checkbox" id="k7"><label for="k7">Sign the starter tax break form at the notary, and apply for NHG.<span class="r"><a href="#s2">2</a>,<a href="#s5">5</a></span></label></li>
@@ -509,7 +574,8 @@ footer.page p{max-width:62ch;margin:0}
     </aside>
 
     <div class="do">
-      <h4>To do</h4>
+      <h4>To do <span class="count">0 / 5</span></h4>
+      <div class="pbar"><span></span></div>
       <ul class="todo">
         <li><input type="checkbox" id="k11"><label for="k11">Build your emergency savings back up first. As an owner you now pay for maintenance, town taxes and insurance.</label></li>
         <li><input type="checkbox" id="k12"><label for="k12">Get the <i>Sociale Hygiëne</i> diploma. You need it for an alcohol licence, it lasts for life, and it needs no building — so you can do it any time, even now.<span class="r"><a href="#s15">15</a></span></label></li>
@@ -671,7 +737,7 @@ footer.page p{max-width:62ch;margin:0}
       <tbody>
         <tr>
           <td data-label="If"><b>The permanent contract is late</b></td>
-          <td data-label="Then">Ask for the <i>intentieverklaring</i> and keep May 2028. If neither comes, move the date. You still have about three years before the tax break ends.</td>
+          <td data-label="Then">Ask for the <i>intentieverklaring</i> straight away, and keep May 2028. There is not much room to move the date, so speak to an adviser early instead of waiting to see what happens.</td>
         </tr>
         <tr>
           <td data-label="If"><b>The salary ends up below €80,000</b></td>
@@ -738,18 +804,79 @@ footer.page p{max-width:62ch;margin:0}
 
 <script>
 (function(){
+  var each=function(list,fn){ Array.prototype.forEach.call(list,fn); };
+
+  /* ---- collapsible menu ---- */
+  var nav=document.getElementById('nav');
+  var toggle=document.getElementById('navToggle');
+  var menu=document.getElementById('navMenu');
+
+  function setMenu(open){
+    nav.classList.toggle('is-open',open);
+    toggle.setAttribute('aria-expanded',open?'true':'false');
+  }
+  toggle.addEventListener('click',function(e){
+    e.stopPropagation();
+    setMenu(!nav.classList.contains('is-open'));
+  });
+  menu.addEventListener('click',function(e){
+    if(e.target.closest('a')) setMenu(false);
+  });
+  document.addEventListener('click',function(e){
+    if(nav.classList.contains('is-open') && !nav.contains(e.target)) setMenu(false);
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && nav.classList.contains('is-open')){ setMenu(false); toggle.focus(); }
+  });
+
+  /* ---- scroll progress ---- */
+  var bar=document.getElementById('progressBar');
+  var queued=false;
+
+  function drawProgress(){
+    queued=false;
+    var doc=document.documentElement;
+    var max=doc.scrollHeight-window.innerHeight;
+    var pct=max>0?(window.pageYOffset/max)*100:0;
+    bar.style.width=Math.max(0,Math.min(100,pct)).toFixed(2)+'%';
+  }
+  function queueProgress(){
+    if(!queued){ queued=true; window.requestAnimationFrame(drawProgress); }
+  }
+  window.addEventListener('scroll',queueProgress,{passive:true});
+  window.addEventListener('resize',queueProgress);
+
+  /* ---- checklists ---- */
   var KEY='plan-todos';
-  var boxes=document.querySelectorAll('.todo input[type=checkbox]');
   var saved={};
   try{ saved=JSON.parse(localStorage.getItem(KEY))||{}; }catch(e){}
 
-  Array.prototype.forEach.call(boxes,function(box){
-    if(saved[box.id]) box.checked=true;
-    box.addEventListener('change',function(){
-      saved[box.id]=box.checked;
-      try{ localStorage.setItem(KEY,JSON.stringify(saved)); }catch(e){}
+  each(document.querySelectorAll('.do'),function(block){
+    var boxes=block.querySelectorAll('.todo input[type=checkbox]');
+    var count=block.querySelector('.count');
+    var fill=block.querySelector('.pbar span');
+    var total=boxes.length;
+
+    function refresh(){
+      var done=0;
+      each(boxes,function(b){ if(b.checked) done++; });
+      count.textContent=done+' / '+total;
+      fill.style.width=total?(done/total)*100+'%':'0%';
+      block.classList.toggle('is-done',done===total && total>0);
+    }
+
+    each(boxes,function(box){
+      if(saved[box.id]) box.checked=true;
+      box.addEventListener('change',function(){
+        saved[box.id]=box.checked;
+        try{ localStorage.setItem(KEY,JSON.stringify(saved)); }catch(e){}
+        refresh();
+      });
     });
+    refresh();
   });
+
+  drawProgress();
 })();
 </script>
 
